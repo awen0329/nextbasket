@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "@/redux/provider";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import MuiProvider from "@/lib/theme/muiTheme";
+import Header from "@/components/layout/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +21,14 @@ export default function RootLayout({
   return (
     <ReduxProvider>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={montserrat.className}>
+          <AppRouterCacheProvider>
+            <MuiProvider>
+              {/* <Header /> */}
+              {children}
+            </MuiProvider>
+          </AppRouterCacheProvider>
+        </body>
       </html>
     </ReduxProvider>
   );
