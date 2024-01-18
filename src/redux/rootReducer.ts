@@ -1,6 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import createWebStorage from "redux-persist/es/storage/createWebStorage";
 
+import cartReducer from "./slices/cart.slice";
+import wishlistReducer from "./slices/wishlist.slice";
+
 export const createNoopStorage = () => ({
   getItem(_key: string) {
     return Promise.resolve(null);
@@ -32,6 +35,9 @@ export const productPersistConfig = {
   whitelist: ["sortBy", "checkout"],
 };
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  cart: cartReducer,
+  wishlist: wishlistReducer,
+});
 
 export default rootReducer;
