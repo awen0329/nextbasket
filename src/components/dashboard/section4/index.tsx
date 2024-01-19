@@ -2,7 +2,7 @@
 
 import { fakePosts } from "@/lib/fake/featuredPosts";
 import PostCard from "./card";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 export default function FeaturedPostSection() {
   return (

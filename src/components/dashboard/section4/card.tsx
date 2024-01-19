@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Button, CardActionArea, CardActions, Stack } from "@mui/material";
+import { Box, CardActionArea, Stack } from "@mui/material";
 import { Post } from "@/lib/types/post";
 import ClockIcon from "@/assets/svgs/clock.svg";
 import ChartIcon from "@/assets/svgs/chart.svg";
