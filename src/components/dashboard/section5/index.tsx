@@ -1,8 +1,6 @@
 "use client";
 
 import { Box, Container, Typography } from "@mui/material";
-import StarIcon from "@/assets/svgs/star.svg";
-import OutlinedStarIcon from "@/assets/svgs/outlinedStar.svg";
 import UserImage from "@/assets/images/users/user.png";
 import TestimonialImage1 from "@/assets/images/testimonials/testimonials-1.png";
 import TestimonialImage2 from "@/assets/images/testimonials/testimonials-2.png";
@@ -14,6 +12,7 @@ import TestimonialImage7 from "@/assets/images/testimonials/testimonials-7.png";
 import TestimonialImage8 from "@/assets/images/testimonials/testimonials-8.png";
 import TestimonialImage9 from "@/assets/images/testimonials/testimonials-9.png";
 import Image from "next/image";
+import Rating from "@/components/base/rating";
 
 const imageSource = [
   TestimonialImage1.src,
@@ -55,18 +54,12 @@ export default function TestimonialSection() {
                 height: "90px",
                 width: "90px",
                 border: "1.8px solid",
-                borderColor: "text.muted",
+                borderColor: "text.blur",
                 borderRadius: "90px",
                 background: `url(${UserImage.src}) lightgray 50% / cover no-repeat`,
               }}
             />
-            <Box gap="5px">
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <StarIcon />
-              <OutlinedStarIcon />
-            </Box>
+            <Rating />
             <Typography
               variant="h6"
               sx={{ textAlign: "center", color: "text.secondary" }}

@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Button,
   Container,
   Divider,
   FormControl,
@@ -14,6 +13,7 @@ import { COPYRIGHT, FOOTER_ITEMS } from "@/lib/constants";
 import FacebookIcon from "@/assets/svgs/facebook.svg";
 import InstagramIcon from "@/assets/svgs/instagram.svg";
 import TwitterIcon from "@/assets/svgs/twitter.svg";
+import CustomizedButton from "@/components/base/Button";
 import Catalogue from "./catalogue";
 import FooterGrid from "./grid";
 
@@ -104,13 +104,11 @@ export default function Footer() {
                       },
                     }}
                   />
-                  <Button
+                  <CustomizedButton
                     variant="contained"
-                    disableElevation
                     sx={{
                       borderTopLeftRadius: 0,
                       borderBottomLeftRadius: 0,
-                      color: "text.light",
                       p: {
                         xs: "15px 25px",
                         md: "15px 40px",
@@ -118,7 +116,7 @@ export default function Footer() {
                     }}
                   >
                     Subscribe
-                  </Button>
+                  </CustomizedButton>
                 </Stack>
                 <Typography
                   variant="body1"

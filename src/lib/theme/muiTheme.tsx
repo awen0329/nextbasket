@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 
 declare module "@mui/material/styles" {
   interface TypeText {
-    muted: string;
+    blur: string;
     light: string;
     success: string;
     danger: string;
@@ -48,6 +48,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#23A6F0",
+      contrastText: "#FFFFFF",
     },
     secondary: {
       main: "#23856D",
@@ -55,8 +56,8 @@ const theme = createTheme({
     text: {
       primary: "#252B42",
       secondary: "#737373",
-      light: "#FFF",
-      muted: "#BDBDBD",
+      light: "#FFFFFF",
+      blur: "#BDBDBD",
       success: "#2DC071",
       danger: "#E74040",
       disabled: "#8EC2F2",

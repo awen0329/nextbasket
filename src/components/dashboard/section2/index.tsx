@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { useGetProductsQuery } from "@/redux/apis/product.api";
 import { Product } from "@/lib/types/product";
+import CustomizedButton from "@/components/base/Button";
 import { useState } from "react";
 import GridLayout from "./grid";
 import ProductCard from "./card";
@@ -36,22 +37,16 @@ export default function FeaturedProductSection() {
       </GridLayout>
       {(data?.products.length || -1) < (data?.total || 0) && (
         <Box display="flex" justifyContent="center">
-          <Button
+          <CustomizedButton
             sx={{
-              p: "15px 40px",
-              fontWeight: 700,
-              fontSize: "14px",
-              letterSpacing: 0.2,
-              lineHeight: "22px",
               minWidth: "265px",
             }}
             onClick={() => setPage((prev) => prev + 1)}
             disabled={isLoading}
             variant="outlined"
-            size="medium"
           >
             Load More Products
-          </Button>
+          </CustomizedButton>
         </Box>
       )}
     </>

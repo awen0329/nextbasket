@@ -40,7 +40,7 @@ export default function ProductCard({
           </Typography>
           <Box display="flex" justifyContent="center" gap="5px">
             <Typography
-              color="text.muted"
+              color="text.blur"
               variant="h5"
               letterSpacing={0.1}
               lineHeight="24px"

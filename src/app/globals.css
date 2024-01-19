@@ -99,3 +99,7 @@ a {
     color-scheme: dark;
   }
 }
+
+.thumbnails .swiper-slide {
+  width: fit-content !important
+}

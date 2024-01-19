@@ -1,7 +1,8 @@
 "use client";
 
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BackgroundImage from "@/assets/images/bg/designExp.jpeg";
+import CustomizedButton from "@/components/base/Button";
 
 export default function BetterExperienceSection() {
   return (
@@ -37,22 +38,14 @@ export default function BetterExperienceSection() {
         <Typography variant="h3" sx={{ color: "secondary.main" }}>
           $16.48
         </Typography>
-        <Button
+        <CustomizedButton
           variant="contained"
-          size="medium"
-          disableElevation
           sx={{
-            p: "15px 40px",
-            fontSize: "14px",
-            fontWeight: 700,
-            color: "text.light",
-            letterSpacing: 0.2,
-            lineHeight: "22px",
             maxWidth: "292px",
           }}
         >
           ADD YOUR CALL TO ACTION
-        </Button>
+        </CustomizedButton>
       </Box>
     </Box>
   );
