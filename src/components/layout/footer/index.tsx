@@ -13,7 +13,7 @@ import {
 import { COPYRIGHT, FOOTER_ITEMS } from "@/lib/constants";
 import FacebookIcon from "@/assets/svgs/facebook.svg";
 import InstagramIcon from "@/assets/svgs/instagram.svg";
-import LyftIcon from "@/assets/svgs/lyft.svg";
+import TwitterIcon from "@/assets/svgs/twitter.svg";
 import Catalogue from "./catalogue";
 import FooterGrid from "./grid";
 
@@ -48,7 +48,7 @@ export default function Footer() {
               <Box display="flex" gap="20px">
                 <FacebookIcon />
                 <InstagramIcon />
-                <LyftIcon />
+                <TwitterIcon />
               </Box>
             </Box>
             <Divider
