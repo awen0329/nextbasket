@@ -1,11 +1,5 @@
-import BestSellerSection from "@/components/product/bestSellerSection";
-import PartnersSection from "@/components/product/partnersSection";
+import ProductDetailPage from "@/components/product/[id]";
 
-export default function ProductDetailPage() {
-  return (
-    <>
-      <BestSellerSection />
-      <PartnersSection />
-    </>
-  );
+export default function Page() {
+  return <ProductDetailPage />;
 }

@@ -5,6 +5,7 @@ import { useGetProductsQuery } from "@/redux/apis/product.api";
 import { Product } from "@/lib/types/product";
 import GridLayout from "./grid";
 import ProductCard from "@/components/dashboard/section2/card";
+import { Box, Container, Typography } from "@mui/material";
 
 export default function BestSellerSection() {
   const router = useRouter();
@@ -15,7 +16,14 @@ export default function BestSellerSection() {
   };
 
   return (
-    <>
+    <Box display={{ xs: "none", md: "block" }}>
+      <Container maxWidth="lg">
+        <Box sx={{ p: "48px 33px 0 33px" }}>
+          <Typography variant="h3" textTransform="uppercase">
+            Bestseller Products
+          </Typography>
+        </Box>
+      </Container>
       <GridLayout maxWidth="lg">
         {data?.products.slice(0, 8).map((product: Product) => (
           <ProductCard
@@ -25,6 +33,6 @@ export default function BestSellerSection() {
           />
         ))}
       </GridLayout>
-    </>
+    </Box>
   );
 }
