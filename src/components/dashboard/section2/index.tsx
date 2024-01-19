@@ -1,16 +1,22 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { Box, Button } from "@mui/material";
 import { useGetProductsQuery } from "@/redux/apis/product.api";
-import SectionHeader from "../sectionHeader";
-import LayoutGrid from "./grid";
-import { useState } from "react";
-import ProductCard from "./card";
 import { Product } from "@/lib/types/product";
+import { useState } from "react";
+import GridLayout from "./grid";
+import ProductCard from "./card";
+import SectionHeader from "../sectionHeader";
 
 export default function FeaturedProductSection() {
+  const router = useRouter();
   const [page, setPage] = useState<number>(1);
   const { data, isLoading, error } = useGetProductsQuery(page);
+
+  const handleClick = (id: number) => {
+    router.push(`/products/${id}`);
+  };
 
   return (
     <>
@@ -19,11 +25,15 @@ export default function FeaturedProductSection() {
         subtitle="Featured Products"
         description="Problems trying to resolve the conflict between"
       />
-      <LayoutGrid maxWidth="lg">
+      <GridLayout maxWidth="lg">
         {data?.products.map((product: Product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard
+            key={product.id}
+            product={product}
+            onClick={() => handleClick(product.id)}
+          />
         ))}
-      </LayoutGrid>
+      </GridLayout>
       {(data?.products.length || -1) < (data?.total || 0) && (
         <Box display="flex" justifyContent="center">
           <Button

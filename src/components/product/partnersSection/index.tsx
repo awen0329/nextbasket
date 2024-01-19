@@ -2,7 +2,7 @@
 
 import { Box, Container } from "@mui/material";
 import HooliIcon from "@/assets/svgs/hooli.svg";
-import LyftIcon from "@/assets/svgs/robinhood.svg";
+import LyftIcon from "@/assets/svgs/lyft.svg";
 import StripeIcon from "@/assets/svgs/stripe.svg";
 import RobinhoodIcon from "@/assets/svgs/robinhood.svg";
 import AWSIcon from "@/assets/svgs/aws.svg";

@@ -7,11 +7,17 @@ import { Box, CardActionArea } from "@mui/material";
 import { Product } from "@/lib/types/product";
 import { formatPrice, getDiscountPrice } from "@/lib/utils";
 
-export default function ProductCard({ product }: { product: Product }) {
+export default function ProductCard({
+  product,
+  onClick,
+}: {
+  product: Product;
+  onClick: () => void;
+}) {
   const { images, title, description, price, discountPercentage } = product;
   return (
     <Card>
-      <CardActionArea sx={{ position: "relative" }}>
+      <CardActionArea sx={{ position: "relative" }} onClick={onClick}>
         <CardMedia
           component="img"
           height="300"
