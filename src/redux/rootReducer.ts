@@ -26,14 +26,14 @@ export const rootPersistConfig = {
   key: "root",
   storage,
   keyPrefix: "redux-",
-  whitelist: [],
+  whitelist: ["cart", "wishlist"],
 };
 
 export const productPersistConfig = {
   key: "product",
   storage,
   keyPrefix: "redux-",
-  whitelist: ["sortBy", "checkout"],
+  whitelist: ["cart", "wishlist"],
 };
 
 const rootReducer = combineReducers({

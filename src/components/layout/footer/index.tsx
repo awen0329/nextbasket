@@ -13,7 +13,7 @@ import { COPYRIGHT, FOOTER_ITEMS } from "@/lib/constants";
 import FacebookIcon from "@/assets/svgs/facebook.svg";
 import InstagramIcon from "@/assets/svgs/instagram.svg";
 import TwitterIcon from "@/assets/svgs/twitter.svg";
-import CustomizedButton from "@/components/base/Button";
+import CustomizedButton from "@/components/base/button";
 import Catalogue from "./catalogue";
 import FooterGrid from "./grid";
 

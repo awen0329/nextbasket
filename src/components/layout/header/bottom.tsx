@@ -2,8 +2,12 @@ import Link from "@/components/base/link";
 import { Box, Typography } from "@mui/material";
 import UserIcon from "@/assets/svgs/user.svg";
 import MenuIcon from "@/assets/svgs/menu.svg";
-import CartAndWishlist from "./cartAndWishlist";
 import { useState } from "react";
+import dynamic from "next/dynamic";
+
+const CartAndWishlist = dynamic(() => import("./cartAndWishlist"), {
+  ssr: false,
+});
 
 export default function Bottom() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

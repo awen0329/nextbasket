@@ -1,7 +1,7 @@
 import { CartProduct, Product } from "@/lib/types/product";
 import { formatPrice, getDiscountPrice } from "@/lib/utils";
-import { Box, Button, IconButton, Typography } from "@mui/material";
-import CustomizedButton from "../base/Button";
+import { Box, IconButton, Typography } from "@mui/material";
+import CustomizedButton from "../base/button";
 
 export default function ListItem({
   product,
