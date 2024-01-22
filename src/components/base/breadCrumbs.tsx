@@ -4,7 +4,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-import Link from "@/components/base/link";
+import Link from "@/components/base/customLink";
 import React from "react";
 
 export default function BreadCrumbs({

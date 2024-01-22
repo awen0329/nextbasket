@@ -1,4 +1,4 @@
-import Link from "@/components/base/link";
+import Link from "@/components/base/customLink";
 import { Box, SxProps, Typography } from "@mui/material";
 import React from "react";
 

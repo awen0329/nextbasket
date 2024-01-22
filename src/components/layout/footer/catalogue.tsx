@@ -1,4 +1,4 @@
-import Link from "@/components/base/link";
+import Link from "@/components/base/customLink";
 import { Box, Typography } from "@mui/material";
 
 interface CatalogueProps {

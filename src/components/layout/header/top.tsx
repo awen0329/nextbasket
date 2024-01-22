@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
-import Link from "@/components/base/link";
+import Link from "@/components/base/customLink";
 import PhoneIcon from "@/assets/svgs/phone.svg";
 import MailIcon from "@/assets/svgs/mail.svg";
 import InstagramIcon from "@/assets/svgs/xinstagram.svg";
