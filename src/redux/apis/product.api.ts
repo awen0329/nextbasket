@@ -10,7 +10,7 @@ interface GetProductResponse {
 
 export const productApi = createApi({
   reducerPath: "productApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_SERVER_URL }),
   endpoints: (builder) => ({
     getProducts: builder.query<GetProductResponse, number>({
       query: (page) => `products?limit=${10}&skip=${(page - 1) * 10}`,
