@@ -1,5 +1,5 @@
 import { Box, Divider, IconButton, Typography } from "@mui/material";
-import CustomizedButton from "@/components/base/Button";
+import CustomizedButton from "@/components/base/button";
 import Elipse from "@/components/base/elipse";
 import Rating from "@/components/base/rating";
 import HeartIcon from "@/assets/svgs/heart.svg";

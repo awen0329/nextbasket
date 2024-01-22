@@ -24,7 +24,7 @@ export default function Catalogue({ label, content }: CatalogueProps) {
         >
           {content.map((text) => (
             <Link
-              key={text}
+              key={label + text}
               href="/"
               sx={{
                 color: "text.secondary",

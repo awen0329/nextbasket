@@ -1,9 +1,9 @@
 export const FOOTER_ITEMS = [
   {
     label: "Company Info",
-    content: ["About Us", "Carrier", "About Us", "Blog"],
+    content: ["About Us", "Carrier", "We are hiring", "Blog"],
   },
-  { label: "Legal", content: ["About Us", "Carrier", "About Us", "Blog"] },
+  { label: "Legal", content: ["About Us", "Carrier", "We are hiring", "Blog"] },
   {
     label: "Features",
     content: [

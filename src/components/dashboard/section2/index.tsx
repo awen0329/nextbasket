@@ -1,23 +1,31 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { useGetProductsQuery } from "@/redux/apis/product.api";
 import { Product } from "@/lib/types/product";
-import CustomizedButton from "@/components/base/Button";
-import { useState } from "react";
+import CustomizedButton from "@/components/base/button";
+import { useEffect, useState } from "react";
 import GridLayout from "./grid";
 import ProductCard from "./card";
 import SectionHeader from "../sectionHeader";
+import { useNotification } from "@/lib/contexts/notificationContext";
 
 export default function FeaturedProductSection() {
   const router = useRouter();
   const [page, setPage] = useState<number>(1);
   const { data, isLoading, error } = useGetProductsQuery(page);
+  const { showNotification } = useNotification();
 
   const handleClick = (id: number) => {
     router.push(`/products/${id}`);
   };
+
+  useEffect(() => {
+    if (error) {
+      showNotification("Can't fetch products.", "error");
+    }
+  }, [error, showNotification]);
 
   return (
     <>
@@ -35,6 +43,11 @@ export default function FeaturedProductSection() {
           />
         ))}
       </GridLayout>
+      {isLoading && (
+        <Box p={3} display="flex" alignItems="center" justifyContent="center">
+          <CircularProgress size="24px" />
+        </Box>
+      )}
       {(data?.products.length || -1) < (data?.total || 0) && (
         <Box display="flex" justifyContent="center">
           <CustomizedButton
