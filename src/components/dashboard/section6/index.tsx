@@ -2,7 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import BackgroundImage from "@/assets/images/bg/designExp.jpeg";
-import CustomizedButton from "@/components/base/Button";
+import CustomizedButton from "@/components/base/button";
 
 export default function BetterExperienceSection() {
   return (
