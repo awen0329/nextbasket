@@ -34,7 +34,12 @@ export default function CartAndWishlist() {
   const removeWishItem = (id: number) => dispatch(removeFromWishlist(id));
 
   return (
-    <Box display="flex" alignItems="center" gap="30px">
+    <Box
+      display="flex"
+      flexDirection={{ xs: "column", md: "row" }}
+      alignItems="center"
+      gap="30px"
+    >
       <SearchIcon />
       <Box display="flex" alignItems="center" gap="5px" onClick={openModal}>
         <CartIcon />
