@@ -21,3 +21,5 @@ bun dev
 ```
 
 ## Deploy on Vercel
+
+Here is the deployed link of this application: [NextBasket](https://nextbasket-eight.vercel.app/)
