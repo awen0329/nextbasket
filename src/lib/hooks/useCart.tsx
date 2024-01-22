@@ -15,10 +15,11 @@ export default function useCart(): {
   const cartInfo = useMemo(() => {
     return cartItems.reduce(
       ({ count, totalPrice, totalDiscountPrice }, cartItem: CartProduct) => {
-        const tp = totalPrice + cartItem.price;
+        const tp = totalPrice + cartItem.price * cartItem.quantity;
         const tdp =
           totalDiscountPrice +
-          getDiscountPrice(cartItem.price, cartItem.discountPercentage);
+          getDiscountPrice(cartItem.price, cartItem.discountPercentage) *
+            cartItem.quantity;
         const ct = count + cartItem.quantity;
         return { count: ct, totalPrice: tp, totalDiscountPrice: tdp };
       },
