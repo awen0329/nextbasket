@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 interface CartState {
-  items: Array<Product & { quantity: number }>;
+  items: CartProduct[];
 }
 
 const initialState = { items: [] } as CartState;
