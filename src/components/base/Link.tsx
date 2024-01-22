@@ -25,6 +25,7 @@ export default function Link({
         display: "flex",
         gap: "9px",
         alignItems: "center",
+        ...sx,
       }}
       {...rest}
     >

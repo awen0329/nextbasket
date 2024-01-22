@@ -1,6 +1,6 @@
 import { CartProduct, Product } from "@/lib/types/product";
 import { formatPrice, getDiscountPrice } from "@/lib/utils";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import CustomizedButton from "../base/Button";
 
 export default function ListItem({
@@ -60,13 +60,13 @@ export default function ListItem({
         <Box display="flex" justifyContent="space-between">
           {isShowQuantityBar && (
             <Box display="flex" gap="10px" alignItems="center">
-              <CustomizedButton onClick={() => decreaseItem?.(product.id)}>
+              <IconButton onClick={() => decreaseItem?.(product.id)}>
                 -
-              </CustomizedButton>
+              </IconButton>
               <span>{itemNumber}</span>
-              <CustomizedButton onClick={() => increaseItem?.(product.id)}>
+              <IconButton onClick={() => increaseItem?.(product.id)}>
                 +
-              </CustomizedButton>
+              </IconButton>
             </Box>
           )}
           <CustomizedButton onClick={() => removeItem(product.id)}>
