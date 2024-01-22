@@ -13,9 +13,11 @@ export default function Bottom() {
       p="0 17px 0 38px"
       gap="120px"
     >
-      <Typography variant="h3" letterSpacing={0.1} lineHeight="32px">
-        Bandage
-      </Typography>
+      <Box display="flex" alignItems="center">
+        <Typography variant="h3" letterSpacing={0.1} lineHeight="32px">
+          Bandage
+        </Typography>
+      </Box>
       <Box display="flex" justifyContent="space-between" flexGrow={1} pl={5}>
         <Box display="flex" gap="21px">
           <Link href="#">

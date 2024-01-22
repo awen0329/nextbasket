@@ -6,6 +6,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import MuiProvider from "@/lib/theme/muiTheme";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import { NotificationProvider } from "@/lib/contexts/notificationContext";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -25,9 +26,11 @@ export default function RootLayout({
         <body className={montserrat.className}>
           <AppRouterCacheProvider>
             <MuiProvider>
-              <Header />
-              {children}
-              <Footer />
+              <NotificationProvider>
+                <Header />
+                {children}
+                <Footer />
+              </NotificationProvider>
             </MuiProvider>
           </AppRouterCacheProvider>
         </body>

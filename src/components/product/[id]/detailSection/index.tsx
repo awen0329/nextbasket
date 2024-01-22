@@ -13,7 +13,7 @@ export default function DetailSection({ product }: { product: Product }) {
           <Gallery images={product.images} />
         </Grid>
         <Grid item md={6} sx={{ pb: "75px" }}>
-          <OperationPanel />
+          <OperationPanel product={product} />
         </Grid>
       </Grid>
     </Container>

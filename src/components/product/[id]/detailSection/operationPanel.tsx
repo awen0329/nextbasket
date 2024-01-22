@@ -5,8 +5,33 @@ import Rating from "@/components/base/rating";
 import HeartIcon from "@/assets/svgs/heart.svg";
 import CartIcon from "@/assets/svgs/cart.svg";
 import EyeIcon from "@/assets/svgs/eye.svg";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { Product } from "@/lib/types/product";
+import { addItem as addWishlistItem } from "@/redux/slices/wishlist.slice";
+import { addItem as addCartItem } from "@/redux/slices/cart.slice";
+import { useNotification } from "@/lib/contexts/notificationContext";
 
-export default function OperationPanel() {
+export default function OperationPanel({ product }: { product: Product }) {
+  const { showNotification } = useNotification();
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const wishlistItems = useAppSelector((state) => state.wishlist.items);
+  const dispatch = useAppDispatch();
+
+  const isInCartAlready = cartItems.find((item) => item.id === product.id);
+  const isInWishlistAlready = wishlistItems.find(
+    (item) => item.id === product.id
+  );
+
+  const handleAddToWishList = () => {
+    dispatch(addWishlistItem(product));
+    showNotification("Successfully added to your cart.", "success");
+  };
+
+  const handleAddToCartList = () => {
+    dispatch(addCartItem(product));
+    showNotification("Successfully added to your favourite.", "success");
+  };
+
   return (
     <Box
       p={{ md: "11px 24px 20px 24px" }}
@@ -87,6 +112,8 @@ export default function OperationPanel() {
               borderColor: "background.gray3",
               color: "text.primary",
             }}
+            disabled={!!isInWishlistAlready}
+            onClick={handleAddToWishList}
           >
             <HeartIcon />
           </IconButton>
@@ -99,6 +126,8 @@ export default function OperationPanel() {
               borderColor: "background.gray3",
               color: "text.primary",
             }}
+            onClick={handleAddToCartList}
+            disabled={!!isInCartAlready}
           >
             <CartIcon />
           </IconButton>
